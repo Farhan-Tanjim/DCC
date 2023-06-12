@@ -15,7 +15,7 @@ def hello():
         return "Wrong Input entered"
     else:
         numbers.sort()
-        return str(n)+"th largest number from the given list is " + str(numbers[~n])
+        return str(n)+"th largest number from the given list is " + str(numbers[::-1][n-1])
    
 
 if __name__ == '__main__':

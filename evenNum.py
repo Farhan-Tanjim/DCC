@@ -6,9 +6,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    m = int(input("Input number n: "))
+    n = int(input("Input number n: "))
     a = ""
-    for num in range(2, 2*m+1, 2):
+    for num in range(2, 2*n+1, 2):
         if (num%2 == 0) :
             a = a + " "+ str(num)
     return a

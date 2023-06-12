@@ -1,25 +1,17 @@
-from flask import Flask
+from flask import  Flask, request, jsonify
 
 
-# If `entrypoint` is not defined in app.yaml, App Engine will look for an app
-# called `app` in `main.py`.
-app = Flask(__name__)
+app = Flask(_name_)
 
 
-@app.route('/')
+@app.route("/")
 def hello():
-    """Return a friendly HTTP greeting."""
-    
-    a = []
-
-    for e in range(1,12,1):
-        if (e%2) == 0:
-            a.append(e)
+    n = int(input("Input number n: "))
+    a = ""
+    for num in range(2, 2*n+1, 2):
+        if (num%2 == 0) :
+            a = a + " "+ str(num)
     return a
 
-
-if __name__ == '__main__':
-    # This is used when running locally only. When deploying to Google App
-    # Engine, a webserver process such as Gunicorn will serve the app. You
-    # can configure startup instructions by adding `entrypoint` to app.yaml.
-    app.run(host='127.0.0.1', port=8080, debug=True)
+if _name_ == "_main_":
+    app.run(host="127.0.0.1", port=8082, debug=True)
